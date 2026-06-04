@@ -42,7 +42,14 @@ test("brackets and title-cases plain section headers", () => {
   assert.equal(normalizeHeaderLine("Chorus:"), "[Chorus]");
   assert.equal(normalizeHeaderLine("Verse2"), "[Verse 2]");
   assert.equal(normalizeHeaderLine("pre-chorus"), "[Pre-Chorus]");
-  assert.equal(normalizeHeaderLine("PRE CHORUS"), "[Pre Chorus]");
+});
+
+test("canonicalizes any pre-chorus spelling to [Pre-Chorus]", () => {
+  assert.equal(normalizeHeaderLine("PRE CHORUS"), "[Pre-Chorus]");
+  assert.equal(normalizeHeaderLine("Prechorus"), "[Pre-Chorus]");
+  assert.equal(normalizeHeaderLine("prechorus"), "[Pre-Chorus]");
+  assert.equal(normalizeHeaderLine("Pre-Chorus 2"), "[Pre-Chorus 2]");
+  assert.equal(normalizeHeaderLine("Prechorus2"), "[Pre-Chorus 2]");
 });
 
 test("splits a header line that also carries chords", () => {

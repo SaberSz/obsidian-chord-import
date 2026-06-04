@@ -34,9 +34,11 @@ function normLabel(label: string): string {
       .split("-")
       .map((p) => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase())
       .join("-");
-  return label
+  const spaced = label
     .trim()
     .replace(/([A-Za-z])(\d)/g, "$1 $2") // split letter/number runs: "Chorus2" -> "Chorus 2"
+    .replace(/^pre[\s-]?chorus/i, "Pre-Chorus"); // canonicalize to the vault's hyphenated form
+  return spaced
     .split(/\s+/)
     .map(titleWord) // title-case every word, not just the first
     .join(" ");
