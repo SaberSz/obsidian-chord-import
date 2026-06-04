@@ -1,0 +1,33 @@
+/* obsidian-chord-import styles. Minimal for v1 — modals use default Obsidian styling. */
+
+.chord-import-modal input[type="text"] {
+  width: 100%;
+}
+
+/* Visible in-app browser used to clear bot challenges. */
+.chord-import-webview-modal {
+  width: min(900px, 92vw);
+}
+.chord-import-webview {
+  display: inline-flex; /* required for <webview> to size correctly */
+  width: 100%;
+  height: 60vh;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+}
+.chord-import-wv-status {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+/* Monospace + full width so pasted chord/lyric alignment stays visible. */
+.chord-import-textarea {
+  width: 100%;
+  min-height: 18em;
+  margin-top: 0.5em;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-small);
+  white-space: pre;
+  overflow-wrap: normal;
+  resize: vertical;
+}
