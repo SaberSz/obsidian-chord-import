@@ -55,7 +55,7 @@ export default class ChordImportPlugin extends Plugin {
       const adapter = findAdapter(url);
       if (!adapter) {
         new Notice(
-          "No importer for that site yet (supported: Ultimate Guitar, Worship Together). For other sites, use \"Import song from pasted text\" or \"…from clipped page\"."
+          "No importer for that site yet (supported: Ultimate Guitar, Worship Together, pnwchords). For other sites, use \"Import song from pasted text\" or \"…from clipped page\"."
         );
         return;
       }

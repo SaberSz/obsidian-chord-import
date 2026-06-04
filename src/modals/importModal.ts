@@ -16,7 +16,7 @@ export class ImportModal extends Modal {
     contentEl.createEl("h3", { text: "Import song from URL" });
 
     new Setting(contentEl).setName("Chord page URL").addText((t) => {
-      t.setPlaceholder("Ultimate Guitar or Worship Together song URL").onChange((v) => (this.url = v.trim()));
+      t.setPlaceholder("Ultimate Guitar, Worship Together, or pnwchords URL").onChange((v) => (this.url = v.trim()));
       t.inputEl.focus();
       t.inputEl.addEventListener("keydown", (e) => {
         if (e.key === "Enter") this.submit();

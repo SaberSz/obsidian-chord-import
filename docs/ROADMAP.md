@@ -14,7 +14,7 @@
 
 ## Later
 
-- **More adapters** (priority order TBD with the user): ✅ Worship Together (done — `src/adapters/worshipTogether.ts`, renders its chord-pro DOM to positional text; not Cloudflare-gated). Remaining candidates: PraiseCharts, e-chords/Chordie, pnwchords.co. Some are paywalled (PraiseCharts, SongSelect-style) — may be out of reach.
+- **More adapters** (priority order TBD with the user): ✅ Worship Together (`src/adapters/worshipTogether.ts`, renders its chord-pro DOM to positional text). ✅ pnwchords.com (`src/adapters/pnwchords.ts`, single plain-text `<pre>` chart). Both not Cloudflare-gated. Remaining candidates: e-chords/Chordie. PraiseCharts is paywalled (purchased PDFs) — likely out of reach.
 - **Paste-raw-text fallback:** reuse the formatter on clipboard text with no URL — covers the Malayalam/Hindi/Kannada long tail that isn't on mainstream sites. The architecture already supports this (formatter is source-agnostic).
 - **Smart tag suggestions:** propose theme tags from the controlled vocabulary based on lyrics (for review, never auto-applied).
 - **Re-import / refresh** an existing song.
